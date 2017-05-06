@@ -36,7 +36,7 @@ public class ITransport implements ITransportRemote, ITransportLocal {
 
 	public List<Cargaison> getAllCargaisons() {
 		@SuppressWarnings("unchecked")
-		List<Cargaison> cargaisons = em.createNamedQuery("find.allcargaison").getResultList();
+		List<Cargaison> cargaisons = em.createQuery("Select c from Cargaison c").getResultList();
 		return cargaisons;
 	}
 

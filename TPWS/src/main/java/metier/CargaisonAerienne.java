@@ -4,9 +4,11 @@ import java.io.Serializable;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
 @DiscriminatorValue("Aerienne")
+@XmlRootElement
 public class CargaisonAerienne extends Cargaison implements Serializable{
 /**
 	 * 

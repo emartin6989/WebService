@@ -11,7 +11,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
-import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSeeAlso;
@@ -20,7 +19,6 @@ import javax.xml.bind.annotation.XmlTransient;
 @Entity
 @Inheritance
 @DiscriminatorColumn(name="CARGAISON_TYPE")
-@NamedQuery(name = "find.allcargaison", query = "Select c from Cargaison c")
 @XmlRootElement
 @XmlSeeAlso({CargaisonAerienne.class, CargaisonRoutiere.class})
 public class Cargaison implements Serializable {
