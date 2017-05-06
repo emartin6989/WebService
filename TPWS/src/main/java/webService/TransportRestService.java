@@ -5,6 +5,7 @@ import java.util.List;
 import javax.ejb.EJB;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -17,14 +18,14 @@ import metier.CargaisonAerienne;
 import metier.CargaisonRoutiere;
 import metier.Marchandise;
 
-@Path("/trs")
+@Path("trs")
 public class TransportRestService {
 
 	@EJB
 	ITransportRemote itransport;
 
 	@Path("/addaerien/{id}/{dist}/{poids}")
-	@PUT
+	@POST
 	public void addCargaisonAerienne(@PathParam("id") long id, @PathParam("dist") int dist,
 			@PathParam("poids") double poids) {
 		CargaisonAerienne ca = new CargaisonAerienne();
@@ -36,7 +37,7 @@ public class TransportRestService {
 	}
 
 	@Path("/addroutier/{id}/{dist}/{temp}")
-	@PUT
+	@POST
 	public void addCargaisonRoutiere(@PathParam("id") long id, @PathParam("dist") int dist,
 			@PathParam("temp") double temp) {
 		CargaisonRoutiere cr = new CargaisonRoutiere();
@@ -48,7 +49,7 @@ public class TransportRestService {
 	}
 	
 	@Path("/addmarchandise/{numero}/{nom}/{poids}/{volume}/{refcarg}")
-	@PUT
+	@POST
 	public void addMarchandise(@PathParam("numero") long numero, @PathParam("nom") String nom,
 			@PathParam("poids") double poids, @PathParam("volume") double volume, @PathParam("refcarg") long refcarg) {
 	Marchandise m = new Marchandise();
